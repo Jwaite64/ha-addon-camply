@@ -9,7 +9,9 @@ arch:
   - aarch64
   - amd64
 
-build: .
+build:
+  dockerfile: Dockerfile
+  path: .
 
 options:
   campground_id: 232085
