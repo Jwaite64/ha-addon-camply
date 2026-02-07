@@ -1,17 +1,14 @@
 name: Camply Campsite Watcher
 slug: camply
-version: "1.0.4"
+version: "1.0.5"
 description: Run Camply 24/7 and notify Home Assistant when campsites open
 startup: services
 boot: auto
 
 arch:
   - aarch64
-  - amd64
 
-build:
-  dockerfile: Dockerfile
-  path: .
+build: .
 
 options:
   campground_id: 232085
