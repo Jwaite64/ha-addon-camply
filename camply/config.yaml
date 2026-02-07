@@ -1,6 +1,6 @@
 name: Camply Campsite Watcher
 slug: camply
-version: "1.0.2"
+version: "1.0.3"
 description: Run Camply 24/7 and notify Home Assistant when campsites open
 startup: services
 boot: auto
