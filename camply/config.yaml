@@ -1,1 +1,25 @@
-test
+name: Camply Campsite Watcher
+slug: camply
+version: "1.0.0"
+description: Run Camply 24/7 and notify Home Assistant when campsites open
+startup: services
+boot: auto
+watchdog: "python -m camply"
+
+arch:
+  - aarch64
+  - amd64
+
+build: .
+
+options:
+  campground_id: 232085
+  start_date: "2026-07-31"
+  end_date: "2026-08-03"
+  poll_interval: 60
+
+schema:
+  campground_id: int
+  start_date: str
+  end_date: str
+  poll_interval: int
