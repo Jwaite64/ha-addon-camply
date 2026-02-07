@@ -1,7 +1,8 @@
-FROM ghcr.io/home-assistant/base-python:3.12
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-RUN apk add --no-cache jq \
- && pip install --no-cache-dir camply
+RUN apk add --no-cache python3 py3-pip jq \
+ && pip3 install --no-cache-dir camply
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
