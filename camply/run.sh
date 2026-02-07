@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/with-contenv sh
 set -e
 
 CAMPGROUND_ID=$(jq -r '.campground_id' /data/options.json)
@@ -13,7 +13,7 @@ echo "Campground: $CAMPGROUND_ID"
 echo "Dates: $START_DATE → $END_DATE"
 echo "Polling every $POLL_INTERVAL seconds"
 
-python -m camply campsites \
+exec python3 -m camply campsites \
   --campground "$CAMPGROUND_ID" \
   --start-date "$START_DATE" \
   --end-date "$END_DATE" \
