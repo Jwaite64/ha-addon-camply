@@ -1,11 +1,10 @@
-FROM python:3.12-slim
+FROM ghcr.io/home-assistant/base-python:3.12
 
-RUN apt-get update \
- && apt-get install -y jq \
- && pip install --no-cache-dir camply \
- && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache jq \
+ && pip install --no-cache-dir camply
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
 CMD ["/run.sh"]
+]
